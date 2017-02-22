@@ -95,7 +95,14 @@ public class TurtleSoup {
      */
     public static double calculateHeadingToPoint(double currentHeading, int currentX, int currentY,
                                                  int targetX, int targetY) {
-        throw new RuntimeException("implement me!");
+        // f-ja naravno nije ispravna
+        //throw new RuntimeException("implement me!");
+        if (targetX == 0 && targetY == 0){
+            return 180 - currentHeading;
+        }
+        double stagodY = targetY - currentY;
+        double stagodX = targetX - currentX;
+        return Math.atan2(stagodY, stagodX) - currentHeading;
     }
 
     /**
